@@ -4,7 +4,7 @@ var router = express.Router();
 // const fetch = require('node-fetch');
 const User = require("../models/users");
 
-const { checkBody } = require('../modules/checkBody');
+const { checkBody } = require('../modules/checkbody');
 
 router.post("/signup", (req, res) => {
   if (!checkBody(req.body, ["name", "email", "password"]) ) {
