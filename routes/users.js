@@ -7,13 +7,6 @@ const User = require("../models/users");
 const { checkBody } = require('../modules/checkBody');
 
 router.post("/signup", (req, res) => {
-  // if (
-  //   !req.body.name || !req.body.email ||
-  //   !req.body.password ||
-  //   req.body.name === "" ||
-  //   req.body.email === "" ||
-  //   req.body.password === ""
-  // ) 
   if (!checkBody(req.body, ["name", "email", "password"]) ) {
     return res.json({ result: false, error: "Missing or empty fields" });
   }
@@ -43,7 +36,6 @@ router.post('/signin', (req, res) => {
   const { email, password } = req.body;
 
   // MISSING OR EMPTY FIELDS
-  // if (!email || !password || email === '' || password === '') 
   if (!checkBody(req.body, ["email", "password"]) ){
     return res.json({ result: false, error: 'missing or empty fields' });
   }
